@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+
 
 
 function Header() {
@@ -7,6 +9,14 @@ function Header() {
       <h1>{props.branding}</h1>  
     </div>
   )
+}
+
+
+Header.defaultProps= {
+  branding: "My App Without Props Passed"
+}
+Header.propTypes ={
+  branding: PropTypes.string.isRequired
 }
 
 export defqault Header;
