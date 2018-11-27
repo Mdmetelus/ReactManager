@@ -19,4 +19,4 @@ Header.propTypes ={
   branding: PropTypes.string.isRequired
 };
 
-export defqault Header;
+export default Header;

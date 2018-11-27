@@ -32,13 +32,9 @@ class Contacts extends Component {
 
  
 
-  render() {this.state.contacts.map(contact => (
-
-  ))
+  render() {
     return (
-      <div>
-
-      </div>
+      <div>{this.state.contacts.map(contact => (<h1>{contact.name}</h1>)} </div>;
     )
   }
 }
