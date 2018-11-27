@@ -14,14 +14,13 @@ class App extends Component {
       <div className="App">
         <h1>The App Component</h1>
         <Header branding= "React Contact Manager" />
-        <Contact 
+        {/*<Contact 
         name="John doe"
         email="jdoe@gmail.com"
         phone="555-444-3333" 
-        />
+        />*/}
 
         <Contacts />
-        <Contact />
       </div>
     );
   }
