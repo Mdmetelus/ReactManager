@@ -15,13 +15,13 @@ class Contact extends Component {
       </div>
     )
   }
-}
+};
 
 Contact.PropTypes={
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-}
+};
 
 
 export default Contact

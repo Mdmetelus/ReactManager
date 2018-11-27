@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Contact from './Components/Contact';
+import Contacts from './Components/Contacts';
 import Header from './Components/Header';
 
 
 class App extends Component {
-
+  constructor(props) {
+    super(props);
 
 
   render() {
@@ -18,8 +19,8 @@ class App extends Component {
         email="jdoe@gmail.com"
         phone="555-444-3333" 
         />
-        
-        <Contact />
+
+        <Contacts />
         <Contact />
       </div>
     );
