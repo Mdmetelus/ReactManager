@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Contact from './Contact';
+import{Consumer} from '../context'
 
 class Contacts extends Component {
   constructor(props) {
@@ -30,17 +32,54 @@ class Contacts extends Component {
 
   }
 
+  // deleteContact= (id) => {
+  //   const { contacts } = this.state;
+
+  //   const newContacts= contacts.filter(thisContact => thisContact.id !== id);
+  //   this.setState({
+  //     contacts: newContacts
+  //   })
+  // }
+
  
 
   render() {
-    return (
-      <div>{this.state.contacts.map(contact => (<h1>{contact.name}</h1>)} </div>;
+    return(
+      <Consumer>
+        {value => {
+          const { contacts } = value;
+          return(
+            <div>{contacts.map(contact => (
+              <Contact key={contact.id}
+                name={contact.name}
+                email={contact.email}
+                phone={contact.phone}
+                {/*deleteClickHandler={this.deleteContact.bind(this, contact.id)}*/}
+              />
+            ))}</div>
+
+
+          )
+        }}
+      </Consumer>
     )
+    return (
+      <div>{this.state.contacts.map(contact => (
+        <Contact key={contact.id}
+        name={contact.name} 
+        email={contact.email} 
+        phone={contact.phone} 
+        deleteClickHandler={this.deleteContact.bind(this, contact.id)}
+        /> 
+        ))}</div>
+    );
+
   }
-}
+ }
 
-componentName.propTypes = {
 
-}
+// componentName.propTypes = {
+
+// }
 
 export default Contacts;
