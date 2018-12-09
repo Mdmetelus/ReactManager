@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import {consumer } from '../../context';
+import { Consumer } from '../../context';
 import uuid from "uuid"
+import TextInputGroup from '../layout/TextInputGroup';
 
  class AddContact extends Component {
    state = {
-     uuid(),
      name: '',
      email: '',
      phone: '',
@@ -16,6 +16,7 @@ import uuid from "uuid"
      const{ name , email , phone } = this.state;
 
      const newContact = {
+       id: uuid(),
        name,
        email,
        phone
@@ -54,14 +55,29 @@ import uuid from "uuid"
 
 
                 <form onSubmit={this.onSubmit.bind(this, dispatch)} >
-                  <div className='formGroup'>
-                    <label htmlFor="name" >Name</label>
-                    <input type="text"
-                      className="formControlFormControlLg"
-                      placeholder="Enter Name..."
-                      value={this.state.name}
-                      onChange={this.onChange} ></input>
-                  </div>
+                  <TextInputGroup
+                  label="name"
+                  placeholder="Enter Name"
+                  value={name}
+                  onChange={this.onChange} />
+
+                  <TextInputGroup
+                    label="name"
+                    placeholder="Enter Name"
+                    value={name}
+                    onChange={this.onChange} />
+
+                  <TextInputGroup
+                    label="name"
+                    placeholder="Enter Name"
+                    value={name}
+                    onChange={this.onChange} />
+
+                  <TextInputGroup
+                    label="name"
+                    placeholder="Enter Name"
+                    value={name}
+                    onChange={this.onChange} />
 
                   <div className='formGroup'>
                     <label htmlFor="email" >Email</label>

@@ -9,20 +9,20 @@ class Contacts extends Component {
         this.state = {
             contacts: [{
                     id: 1,
-                    name: 'John Doe'
-                    email: 'Jdoe@gmail.com'
+                    name: 'John Doe',
+                    email: 'Jdoe@gmail.com',
                     phone: '555-444-3333'
                 },
                 {
                     id: 2,
-                    name: 'Karen Doe'
-                    email: 'KKaren@gmail.com'
+                    name: 'Karen Doe',
+                    email: 'KKaren@gmail.com',
                     phone: '155-244-3332'
                 },
                 {
                     id: 1,
-                    name: 'Henry Johnson'
-                    email: 'Henry@gmail.com'
+                    name: 'Henry Johnson',
+                    email: 'Henry@gmail.com',
                     phone: '115-422-8893'
                 }
 
@@ -43,45 +43,36 @@ class Contacts extends Component {
 
 
     render() {
-        return ( <
-            Consumer > {
-                value => {
+        return ( <Consumer> {value => {
                     const { contacts } = value;
-                    return ( <
-                        div > {
-                            contacts.map(contact => ( <
+                    return ( <div> {contacts.map(contact => ( <
                                 Contact key = { contact.id }
                                 name = { contact.name }
                                 email = { contact.email }
                                 phone = { contact.phone } { /*deleteClickHandler={this.deleteContact.bind(this, contact.id)}*/ }
-                                />
-                            ))
-                        } < /div>
+                                />))
+                        } </div>
 
 
                     )
                 }
-            } <
-            /Consumer>
+            } </Consumer>
         )
-        return ( <
-            div > {
-                this.state.contacts.map(contact => ( <
+        return ( <div> {this.state.contacts.map(contact => ( <
                     Contact key = { contact.id }
                     name = { contact.name }
                     email = { contact.email }
                     phone = { contact.phone }
                     deleteClickHandler = { this.deleteContact.bind(this, contact.id) }
-                    /> 
-                ))
-            } < /div>
+                    />))
+            } </div>
         );
 
     }
 }
 
 
-// componentName.propTypes = {
+// Contacts.propTypes = {
 
 // }
 
